@@ -1,0 +1,51 @@
+@import "../../node_modules/material-design-icons/iconfont/material-icons.css";
+
+html, body {
+	height: 100%;
+	user-select: none;
+	overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #ddd;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: #666; 
+}
+
+#player, #player > div {
+	height: 100%;
+
+	flex-direction: column;
+	display: flex;
+}
+
+.main-container {
+	flex: 1;
+	display: flex;
+}
+
+.side-nav {
+	flex: 1;
+	min-width: 200px;
+	max-width: 250px;
+}
+
+div.main-area {
+	flex: 4;
+	overflow: hidden;
+}
+
+.main-area > .main {
+	overflow: visible;
+	position: relative;
+}
+
+.item-title {
+	cursor: pointer;
+}

@@ -1,0 +1,55 @@
+.dark .side-nav {
+	background: #333333;
+}
+
+.dark .main-area {
+	background: #2b2b2b;
+}
+
+.dark .nav-item {
+	color: rgb(173, 173, 173);
+}
+
+.dark .nav-item:hover, .dark .nav-item.selected {
+	color: #757575;
+}
+
+.dark .card {
+	background-color: #3d3d3d !important;
+}
+
+.dark .item > h1, .dark .inline-input {
+	color: #d6d6d6;
+}
+
+.dark .item-title {
+	color: #b5b5b5;
+}
+
+.deep.dark .bar-button {
+	background-color: #1f1f1f !important;
+}
+
+.deep.dark .bar-button > span > i {
+	color: var(--primary-color);
+}
+
+.flat.dark .bar-button > span > i {
+	color: var(--primary-track);
+}
+
+.dark .brand-logo > img {
+	background: #333333;
+}
+
+.dark ul {
+	background-color: #292929;
+}
+
+.dark ul li:hover {
+	background-color: #0000002b !important;
+}
+
+.dark .divider {
+	background-color: #ffffff2e !important;
+}

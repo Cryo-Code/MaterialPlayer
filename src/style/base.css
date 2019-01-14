@@ -1,0 +1,313 @@
+.main-area {
+	display: flex;
+	flex-direction: column;
+
+	overflow: auto;
+	height: 100%;
+}
+
+.side-nav {
+	height: 100%;
+}
+
+.section-display {
+	padding-left: 1em;
+}
+
+.section-group {
+	padding: .2em 1.1em;
+	padding-left: .5em;
+	font-weight: 500;
+}
+
+.nav-item {
+	position: relative;
+	font-size: 18px;
+	cursor: pointer;
+	transition: .3s;
+	border-radius: 3px;
+	padding: .3em;
+	margin-bottom: .2em;
+}
+
+.list-container {
+	position: relative;
+}
+
+.play-marker {
+	position: absolute;
+	transition: .3s;
+
+	box-shadow: rgba(0,0,0,.16) 0px 3px 6px;
+
+	top: 0;
+	right: -7px;
+
+	height: 67px;
+	width: 7px;
+	
+	overflow: hidden;
+
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+
+	background: var(--primary-color);
+}
+
+.play-marker .time {
+	transition: .3s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--primary-track);
+}
+
+.nav-item.playing .play-pill {
+	position: absolute;
+
+	border-radius: 3px;
+
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 10px;
+	background: var(--primary-color);
+}
+
+.nav-item:hover, .nav-item.selected {
+	background: rgba(0, 0, 0, .2);
+}
+
+.item-date {
+	font-weight: 100;
+}
+
+.main-area > .main {
+	flex: 1;
+}
+
+.inline-input {
+	border: 0;
+	outline: 0;
+	line-height: 1em;
+	background: transparent;
+}
+
+.bar {
+	flex: 0;
+	max-height: 120px;
+	overflow: hidden;
+
+	min-height: 100px;
+	flex: 1;
+
+	position: relative;
+
+	/*transition: .3s;*/
+}
+
+.bar-track {
+	opacity: 0;
+	transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.16);
+	height: 5px;
+	cursor: pointer;
+}
+
+.bar-track:hover {
+	height: 15px;
+}
+
+.time-track {
+	transition: .16s;
+
+	height: 100%;
+	background: var(--primary-track);
+	pointer-events: none;
+}
+
+.bar > .bar-sub {
+	height: 100%;
+	/*background: var(--primary-color);*/
+}
+
+.bar.open .bar-track {
+	opacity: 1;
+}
+
+.bar.open > .bar-sub {
+	background: var(--primary-color);
+}
+
+:root {
+	--primary-color: #ee6e73;
+	--primary-hover: #b4595c;
+	--primary-track: #ffa501;
+}
+
+nav {
+	background: var(--primary-color);
+}
+
+.primary-button {
+	background: var(--primary-color);
+}
+
+.primary-button:hover {
+	background: var(--primary-hover);
+}
+
+
+.item {
+	min-height: 200px;
+	padding: .75em;
+
+	box-shadow: rgba(0,0,0,.16) 0px 3px 6px;
+}
+
+.item > h1 {
+	font-weight: 100;
+	margin-top: 0;
+	font-size: 3em;
+}
+
+.item-inline {
+	margin: 0px;
+	display: flex;
+}
+
+.item-inline > div {
+	flex: 1;
+	padding-left: .5em;
+}
+
+.item-inline > img {
+	max-height: 100%;
+	max-width: 67px;
+	flex: 1;
+}
+
+.item-inline h5 {
+	margin: 0;
+}
+
+.item-small {
+	box-shadow: rgba(0,0,0,.16) 0px 3px 6px;
+	margin: 0px;
+	display: flex;
+
+	margin-bottom: 14.5px;
+}
+
+.item-small:hover {
+	box-shadow: rgba(0,0,0,.16) 0px 5px 10px;
+}
+
+.item-small > div {
+	flex: 1;
+	padding-left: .5em;
+}
+
+.item-small > img {
+	max-height: 100%;
+	max-width: 67px;
+	flex: 1;
+}
+
+.item-small h5 {
+	margin: 0;
+}
+
+.item-small .primary-button {
+	transition: .3s;
+	opacity: 0;
+}
+
+.item-small:not(.playing):hover .primary-button {
+	transition: .3s;
+	opacity: 1;
+}
+
+.active-text {
+	cursor: default;
+	color: var(--primary-color);
+}
+
+
+.flat button.bar-button.btn-floating {
+	transition: transform .4s;
+	background: transparent;
+	color: transparent;
+	box-shadow: none;
+
+	margin: 1em;
+}
+
+.deep button.bar-button.btn-floating {
+	opacity: 0;
+	transition: transform .2s, opacity .3s;
+	/*background: white;*/
+	color: transparent;
+
+	margin: 1em;
+}
+
+.deep .open button.bar-button.btn-floating {
+	opacity: 1;
+}
+
+.bar-left, .bar-right {
+	transition: opacity .3s;
+	opacity: 0;
+}
+
+.open .bar-left, .open .bar-right {
+	opacity: 1;
+}
+
+.deep .bar-button:hover {
+	transform: translateY(-5px);
+}
+
+.flat .bar-button:hover {
+	transform: scale(1.25);
+	opacity: .6;
+}
+
+.bar-button > span > i {
+	font-size: 2em;
+}
+
+.bar-button.btn-large > span > i {
+	font-size: 3.5em;
+}
+
+.bar-sub {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: flex;
+}
+
+.bar-left {
+	display: flex;
+	flex: 3;
+	align-items: center;
+}
+
+.bar-mid {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 6;
+}
+
+.bar-right {
+	display: flex;
+	flex: 3;
+	align-items: center;
+}

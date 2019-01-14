@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+		<script src="lib/jquery.js"></script>
+		<script src="lib/vue.js"></script>
+		<script src="lib/velocity.js"></script>
+		<script src="lib/material.js"></script>
+		<link rel="stylesheet" href="lib/material.css">
+		<link rel="stylesheet" href="lib/normalize.css">
+
+		<script src="src/client/main.js"></script>
+		<script src="src/client/animation.js"></script>
+
+		<script src="src/client/components/player.js"></script>
+		<script src="src/client/components/sideNav.js"></script>
+		<script src="src/client/components/navItem.js"></script>
+		<script src="src/client/components/item.js"></script>
+		<script src="src/client/components/itemInline.js"></script>
+		<script src="src/client/components/itemSmall.js"></script>
+
+		<script src="src/client/class/player.js"></script>
+		<script src="src/client/class/interface/interface.js"></script>
+		<script src="src/client/class/interface/fileSystemInterface.js"></script>
+		<script src="src/client/class/profile/profile.js"></script>
+		<script src="src/client/class/profile/localProfile.js"></script>
+
+		<link rel="stylesheet" href="src/style/main.css">
+		<link rel="stylesheet" href="src/style/animation.css">
+		<link rel="stylesheet" href="src/style/light.css">
+		<link rel="stylesheet" href="src/style/dark.css">
+		<link rel="stylesheet" href="src/style/base.css">
+	</head>
+	<body>
+		<div id="player">
+			<player :player="player"></player>
+		</div>
+		<script>
+			let profile = new MaterialPlayer.LocalProfile();
+			let fsInterface = new MaterialPlayer.FileSystemInterface();
+			let player = new MaterialPlayer.Player($("#player")[0], fsInterface, profile);
+			player.loadProfiles();
+
+			player.initialize();
+
+			window.onbeforeunload = (e) => {
+				player.saveProfiles();
+			};
+
+		</script>
+	</body>
+</html>

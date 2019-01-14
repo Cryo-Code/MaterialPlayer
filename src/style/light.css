@@ -1,0 +1,39 @@
+.light .side-nav {
+	background: white;
+}
+
+.light .main-area {
+	background: #EEEEEE;
+}
+
+.light .nav-item {
+	color: #A5A5A5;
+}
+
+.light .nav-item:hover, .light .nav-item.selected {
+	color: #757575;
+}
+
+.light .item > h1 {
+	color: rgba(0, 0, 0, .3);
+}
+
+.light .item-title {
+	color: #747474;
+}
+
+.flat.light .bar-button > span > i {
+	color: #EEEEEE;
+}
+
+.deep.light .bar-button > span > i {
+	color: var(--primary-color);
+}
+
+.deep.light .bar-button {
+	background-color: white !important;
+}
+
+.dark .brand-logo > img {
+	background: #b8b8b8;
+}

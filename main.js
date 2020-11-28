@@ -80,7 +80,7 @@ async function parseFile(file, scanDir) {
 }
 
 ipcMain.on("pickMusic", async (event, folder) => {
-	let files = dialog.showOpenDialog({
+	let files = dialog.showOpenDialogSync({
 		title: "Add music",
 		filters: [
 			{name: "Sound (.mp3, .wav, .ogg)", extensions: ["mp3", "wav", "ogg"]}
@@ -105,8 +105,10 @@ ipcMain.on("pickMusic", async (event, folder) => {
 });
 
 function createWindow () {
-	win = new BrowserWindow({width: 800, height: 600, nodeIntegration: false});
+	win = new BrowserWindow({width: 800, height: 600, webviewTag: true, webPreferences:{nodeIntegration: true}});
 	win.loadFile('index.html');
+
+	win.on("closed", () => { app.quit(); });
 }
 
 app.on('ready', createWindow);

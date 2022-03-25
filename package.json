@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^4.0.1"
+    "electron": "^13.6.6"
   },
   "dependencies": {
     "dataurl": "^0.1.0",
